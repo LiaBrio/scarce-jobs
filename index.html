@@ -178,6 +178,23 @@
 
       /* ---------- sources ---------- */
       .src-list{margin:0;padding-left:19px;color:var(--ink2);font-size:13.5px;line-height:1.9}
+      .src-link{display:inline-flex;align-items:center;gap:5px;font-size:12.5px;font-weight:700;color:var(--cyan);text-decoration:none;border:1px solid var(--line2);border-radius:999px;padding:3px 11px;background:var(--panel2);white-space:nowrap}
+      .src-link:hover{text-decoration:underline;border-color:var(--cyan)}
+      .dir-srcs{padding:4px 18px 14px}
+      .dir-srcs h3{margin:10px 0 4px;font-size:14px;color:var(--ink2)}
+      .ds-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;padding:8px 2px;border-bottom:1px dashed var(--line);font-size:13.5px}
+      .ds-row:last-child{border-bottom:none}
+      .ds-city{font-weight:800;min-width:52px}
+      .ds-doc{color:var(--ink2);line-height:1.55;flex:1;min-width:220px}
+      .ds-doc .old{color:var(--gold)}
+      .plat{display:inline-block;font-size:11.5px;font-weight:700;padding:2px 9px;border-radius:999px;background:var(--chip);border:1px solid var(--line2);color:var(--ink);white-space:nowrap}
+      .plat-strip{display:flex;flex-wrap:wrap;gap:7px;margin:10px 2px 0}
+      .plat-strip .ps{font-size:12.5px;color:var(--ink2);border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:4px 12px}
+      .plat-strip .ps b{color:var(--ink)}
+      .boss-note{margin:12px 2px 0;font-size:13px;color:var(--ink2);line-height:1.75;background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:11px 14px}
+      .boss-note b{color:var(--ink)}
+      .dual-sal{margin-top:6px;font-size:13px;color:var(--ink2)}
+      .dual-sal b{color:var(--ink);font-variant-numeric:tabular-nums}
       .src-list a{text-decoration:none}
       .src-list a:hover{text-decoration:underline}
       .miss-list{margin:0;padding-left:19px;color:var(--ink2);font-size:13.5px;line-height:1.85}
@@ -190,7 +207,7 @@
       <header class="topbar">
         <div>
           <h1>全国稀缺岗位与薪资分布</h1>
-          <div class="sub">十城官方紧缺职业目录 · 城市平均招聘薪酬 · <b>37 条真实在招岗位</b>　|　数据截至 <b>2026-11-09</b>，薪资均为招聘挂牌价，非到手工资</div>
+          <div class="sub">官方紧缺职业目录（每城附原文跳转链接）· 城市平均招聘薪酬（智联 + 58 同城双口径）· <b>97 条真实在招岗位（猎聘 / 前程无忧 / BOSS 直聘 / 智联 / 企业官网等多平台综合，其中 BOSS 直聘实采 60 条）</b>　|　数据截至 <b>2026-11-09</b>，<b>仅收录近 3 年（2023 年 11 月以后）发布或统计的数据，超过 3 年的已剔除</b>；薪资均为招聘挂牌价，非到手工资</div>
         </div>
         <nav class="nav">
           <a href="#sec-map">城市地图</a>
@@ -207,7 +224,7 @@
           <div class="panel map-card">
             <div class="map-head">
               <h2>中国 · 重点城市稀缺岗位分布</h2>
-              <span class="cap">气泡大小 = 平均招聘月薪（智联 2024 年三季度）· 颜色 = 主导稀缺领域 · 点击气泡看城市详情</span>
+              <span class="cap">气泡大小 = 平均招聘月薪（智联 2024 年三季度）· 颜色 = 主导稀缺领域 · 点击气泡看城市详情（详情内含 58 同城双口径与官方目录原文链接）</span>
             </div>
             <div id="mapChart" role="img" aria-label="中国地图：21 个重点城市以气泡标出，气泡大小对应平均招聘月薪"></div>
             <div id="mapFallback" hidden>
@@ -221,11 +238,11 @@
       </section>
 
       <div class="kpis">
-        <div class="kpi"><div class="num">13,544<small>元/月</small></div><div class="lab">平均招聘月薪最高城市：上海（智联 2024 年三季度，38 城平均 10,058 元）</div></div>
-        <div class="kpi"><div class="num">21<small>城</small></div><div class="lab">地图收录城市：13 城有平均招聘月薪，7 城未查到，另含宁德（宁德时代）</div></div>
+        <div class="kpi"><div class="num">13,544<small>元/月</small></div><div class="lab">平均招聘月薪最高城市：上海（智联 2024 年三季度，38 城平均 10,058 元）；58 同城 2026 年三季度口径上海为 9,736 元，双口径并列、不可直接比较</div></div>
+        <div class="kpi"><div class="num">21<small>城</small></div><div class="lab">地图收录城市：13 城有平均招聘月薪（智联口径），其中 4 城另有 58 同城口径；7 城未查到，另含宁德（宁德时代）</div></div>
         <div class="kpi"><div class="num">5<small>城</small></div><div class="lab">「人工智能训练师」进入官方紧缺目录的城市数，2026 年覆盖最广</div></div>
         <div class="kpi"><div class="num">17,775<small>元/月</small></div><div class="lab">AI 工程师应届平均招聘月薪（智联《人才市场热点快报》2026 年三季度）</div></div>
-        <div class="kpi"><div class="num">37<small>条</small></div><div class="lab">真实招聘：12 类职业、9 个城市，全部带原始链接，2026-11-09 采集</div></div>
+        <div class="kpi"><div class="num">97<small>条</small></div><div class="lab">真实招聘：12 类职业、9 个城市，多平台综合（猎聘 11 · 前程无忧 12 · 智联 3 · BOSS 直聘 61 · 企业官网 / 院校 / 政府平台等其他来源 10），全部带原始链接，2026-11-09 采集；BOSS 实采 60 条目前覆盖芯片与 AI 应用开发 2 类，其余 10 类待限流解除后补</div></div>
         <div class="kpi"><div class="num">10<small>职业</small></div><div class="lab">薪资区间已核实的稀缺职业；营销员无统计口径薪资，未查到、不画条</div></div>
       </div>
 
@@ -233,7 +250,7 @@
       <section id="sec-salary">
         <div class="sec-head">
           <h2>稀缺岗位薪资分布</h2>
-          <span class="cap">同一职业多口径并列展示，口径不同不可直接横向比较 · 圆点 = 平均值 / 中位值，条 = 公布区间</span>
+          <span class="cap">多平台综合：脉脉、猎聘、BOSS 直聘、智联、谈职、劳科院、官方监测 7 个来源并列展示，口径不同不可直接横向比较 · 圆点 = 平均值 / 中位值，条 = 公布区间</span>
         </div>
         <div class="panel">
           <div class="chart-title">十大稀缺职业月薪区间与代表值（元/月）
@@ -261,24 +278,25 @@
       <!-- ============ 3. OFFICIAL SHORTAGE LISTS ============ -->
       <section id="sec-official">
         <div class="sec-head">
-          <h2>官方紧缺职业 · 十城目录对照</h2>
-          <span class="cap">每城取官方目录 TOP5（广州为现行 2019 年版，武汉为湖北省目录，西安为陕西省目录，深圳为 2025 年版）</span>
+          <h2>官方紧缺职业 · 目录对照（附原文链接）</h2>
+          <span class="cap">每城取官方目录 TOP5，每份目录均附官方原文跳转链接可直接核验（武汉为湖北省目录，西安为陕西省目录，深圳为 2025 年版）；广州 2019 年版目录已超过 3 年，按「只用近 3 年数据」规则剔除，广州 2026 年版尚未发布，故不列广州职业</span>
         </div>
         <div class="panel">
           <div class="mx" id="mxBody"></div>
+          <div class="dir-srcs" id="dirSrcs"></div>
         </div>
         <div class="two-col" style="margin-top:14px">
           <div class="panel box">
             <h3>北京市 2026 年第一季度「最缺工」TOP 20</h3>
-            <div class="cap">北京市人社局《2026 年第一季度市场招聘大于求职「最缺工」的 100 个职业排行》（统计时间 2025-12-21 至 2026-03-20）——<b>北京口径，非全国排行</b>。100 个职业中社会生产服务和生活服务岗位占 54%；快递员、餐厅服务员、理货员、养老护理员、网约配送员、保育师连续两季度位列前十。逐职业求人倍率未查到。</div>
+            <div class="cap">北京市人社局《2026 年第一季度市场招聘大于求职「最缺工」的 100 个职业排行》（统计时间 2025-12-21 至 2026-03-20）——<b>北京口径，非全国排行</b>。100 个职业中社会生产服务和生活服务岗位占 54%；快递员、餐厅服务员、理货员、养老护理员、网约配送员、保育师连续两季度位列前十。逐职业求人倍率未查到。　<a class="src-link" href="https://rsj.beijing.gov.cn/xxgk/sjfbsj/gqfx/202605/P020260518351638747375.docx" target="_blank" rel="noopener">查看官方原文 ↗</a></div>
             <ol class="top20" id="top20"></ol>
           </div>
           <div class="panel box">
-            <h3>全国口径：暂无 2026 年官方排行</h3>
-            <div class="cap">人社部「全国招聘大于求职最缺工职业排行」官网栏目最新一期仍为 <b>2022 年第四季度</b>；截至 2026-11-09，未查到人社部发布的 2026 年 Q2 / Q3 全国排行。网传「2026 年 Q2 人社部最缺工前十」名单未能核实，本页不采用。</div>
+            <h3>全国口径：近 3 年内无官方排行</h3>
+            <div class="cap">人社部「全国招聘大于求职最缺工职业排行」官网栏目最新一期为 <b>2022 年第四季度</b>，已超过 3 年，按本页「只用近 3 年数据」规则<b>不纳入展示</b>；截至 2026-11-09，未查到人社部发布的 2024—2026 年全国排行。网传「2026 年 Q2 人社部最缺工前十」名单未能核实，本页不采用。　<a class="src-link" href="https://chinajob.mohrss.gov.cn/h5/sjpd/dqzypx/" target="_blank" rel="noopener">人社部短缺职业排行栏目 ↗</a></div>
             <ul class="warn-list">
               <li><b>成都</b>：《成都市人才开发指引（2026 版）》已发布，围绕 17 条重点产业链梳理 507 个急需紧缺岗位，岗位明细未公开。</li>
-              <li><b>广州</b>：2026 年版市级统一紧缺目录尚未发布，现行有效为 2019 年目录；新版已开展需求调查。</li>
+              <li><b>广州</b>：2026 年版市级统一紧缺目录尚未发布；2019 年版目录已超过 3 年，本页已剔除其职业条目，新版已开展需求调查，发布后再补。</li>
               <li><b>武汉</b>：无市级统一目录，执行《2026 年湖北省重点产业急需紧缺技能人才职业（工种）指导目录》。</li>
               <li><b>西安</b>：无市级统一目录；陕西省目录中软件和信息技术服务、传感器与物联网、航空产业链紧缺岗位数量占比居前三，本科学历岗位占比超 60%。</li>
               <li><b>深圳</b>：另有《重点产业高端紧缺岗位清单》涉及 1,343 个岗位，明细未在公开报道中逐条列出。</li>
@@ -291,9 +309,11 @@
       <!-- ============ 4. JOB POSTINGS ============ -->
       <section id="sec-jobs">
         <div class="sec-head">
-          <h2>在招岗位 · 37 条真实招聘</h2>
-          <span class="cap">2026-11-09 采集 · 薪资为原贴挂牌价 · 「详情页」可直达岗位；「检索页 · 页内定位」需在打开的页面内找到该岗位</span>
+          <h2>在招岗位 · 97 条真实招聘（多平台综合）</h2>
+          <span class="cap">2026-11-09 采集 · 薪资为原贴挂牌价 · 每张卡片标注来源平台 · 「详情页」可直达岗位；「检索页 · 页内定位」需在打开的页面内找到该岗位</span>
         </div>
+        <div class="plat-strip" id="platStrip"></div>
+        <div class="boss-note"><b>BOSS 直聘覆盖说明：</b>本批 BOSS 实采 60 条（2026-11-09 抓取）目前只覆盖<b>芯片设计 / 验证（上海 15 条）</b>与<b>AI 应用开发（北京 / 上海 / 深圳各 15 条）</b>共 2 类，均为详情页直达；其余 10 类（大模型应用开发、RAG 开发、AI Agent 开发、嵌入式、新能源汽车、智能制造 / 自动化、生物医药研发、养老护理员、直播电商运营 / 主播、营销员 / 销售代表）的 BOSS 抓取因平台限流未返回，状态为<b>「待补（BOSS 限流，待重试）」——不是这些类别在 BOSS 上没有岗位</b>；这 10 类目前由猎聘 / 前程无忧 / 智联 / 企业官网等其他平台的岗位支撑。</div>
         <div class="filters" id="jobFilters"></div>
         <div class="job-count" id="jobCount"></div>
         <div id="jobGroups"></div>
@@ -312,16 +332,17 @@
               <li>「平均招聘薪酬」是企业招聘时标注的挂牌价，不是员工到手工资；不同平台（智联 / 猎聘 / 脉脉 / BOSS 直聘 / 谈职）样本与统计方法不同，数字不可直接横向比较。</li>
               <li>城市平均薪资取自智联《中国企业招聘薪酬报告》<b>2024 年三季度</b>——这是可验证的最新一期季度版（38 城平均 10,058 元/月）；2026 年三季度智联只发布了人才市场热点快报，无 38 城榜单。</li>
               <li>网传标称「2026 年三季度、38 城平均 10,115 元」的一组数字，经核实与 2023 年三季度报告逐字相同，属旧数误标，本页不采用。</li>
-              <li>58 同城 2026 年三季度口径（上海 9,736 元、北京 9,109 元、深圳 8,567 元、杭州 8,459 元）与智联口径不同，本页不并列比较。</li>
+              <li><b>多平台综合</b>：城市平均薪资同时给出智联（2024 年三季度）与 58 同城（2026 年三季度：上海 9,736 元、北京 9,109 元、深圳 8,567 元、杭州 8,459 元）两个平台口径，样本与统计方法不同、不可直接横向比较，城市详情中双口径并列展示；职业薪资综合脉脉、猎聘、BOSS 直聘、智联、谈职、劳科院与官方监测 7 个来源；招聘岗位来自猎聘、前程无忧、BOSS 直聘、智联及企业 / 院校 / 政府平台，每条标注来源平台。</li>
+              <li><b>时效规则</b>：本页仅收录近 3 年（2023 年 11 月以后）发布或统计的数据。已剔除：广州市 2019 年版紧缺目录（焊工、车工、电工、半导体芯片制造工、动车组机械师等条目）、人社部 2022 年第四季度全国最缺工排行。</li>
               <li>招聘卡片中「月薪约」为原贴薪资的月薪折算（年薪类按年薪 ÷ 12），「·13/14/15/16 薪」为原贴标注的年薪月数。</li>
             </ul>
             <h3 style="margin-top:20px">未查到清单</h3>
             <ol class="miss-list">
-              <li>人社部全国最缺工 TOP 20（2026 年 Q2 / Q3）及逐职业求人倍率——官网栏目最新仍为 2022 年 Q4。</li>
+              <li>人社部全国最缺工 TOP 20（近 3 年内期数）及逐职业求人倍率——官网栏目最新一期为 2022 年 Q4，已超 3 年剔除，2024—2026 年无新期。</li>
               <li>智联 2026 年 Q3 38 城平均招聘薪酬（20 城全部）——该期无城市榜单。</li>
               <li>智联 2024 年 Q3 城市数字：成都、重庆、长沙、郑州、合肥、青岛、福州——公开文本未找到，地图上这 7 城不显示平均薪资。</li>
               <li>营销员薪资区间（全国 / 城市平均或中位）——仅见个别招聘帖，口径不一。</li>
-              <li>广州市 2026 年版市级统一紧缺目录——现行仍为 2019 年版。</li>
+              <li>广州市 2026 年版市级统一紧缺目录——尚未发布；2019 年版已超 3 年，本页不采用。</li>
               <li>成都市 2026 版 507 个紧缺岗位明细及学历 / 专业 / 经验要求。</li>
               <li>武汉市级统一紧缺目录——执行湖北省 2026 年省级目录。</li>
               <li>西安市级统一紧缺目录及 57 个备案紧缺职业名单。</li>
@@ -337,7 +358,8 @@
               <li>北京市人社局 2026 年 Q1 最缺工 100 职业排行文件（2026-05-18 上网）：<a href="https://rsj.beijing.gov.cn/xxgk/sjfbsj/gqfx/202605/P020260518351638747375.docx" target="_blank" rel="noopener">rsj.beijing.gov.cn（docx）</a></li>
               <li>上海市人社局《上海市急需紧缺高技能人才职业（工种）目录（2026 年）》（2026-06-29）：<a href="https://rsj.sh.gov.cn/tjypx_17737/20260702/t0035_1442059.html" target="_blank" rel="noopener">rsj.sh.gov.cn</a></li>
               <li>深圳市技能人才引进紧缺职业目录（2025 年）：<a href="https://www.sz.gov.cn/cn/xxgk/zfxxgj/tzgg/content/post_12366763.html" target="_blank" rel="noopener">sz.gov.cn</a></li>
-              <li>广州市人社局《紧缺工种人才引进入户申报指南》（2026-09-01，沿用 2019 年目录）：<a href="https://rsj.gz.gov.cn/ywzt/ztbd/bwyc/yjrcrh/content/post_10986688.html" target="_blank" rel="noopener">rsj.gz.gov.cn</a></li>
+              <li>广州市人社局《紧缺工种人才引进入户申报指南》（2026-09-01；其沿用的 2019 年目录已超 3 年，本页仅以此证明广州暂无近 3 年目录，未采用其职业条目）：<a href="https://rsj.gz.gov.cn/ywzt/ztbd/bwyc/yjrcrh/content/post_10986688.html" target="_blank" rel="noopener">rsj.gz.gov.cn</a></li>
+              <li>58 同城 2026 年三季度人才流动数据（城市平均招聘薪资第二口径，51ldb 转载）：<a href="https://www.51ldb.com/shsldb/zc/content/01a16846d6f3c001000066d533acd97d.htm" target="_blank" rel="noopener">51ldb.com</a></li>
               <li>杭州市人社局《杭州市技能类紧缺职业（工种）目录（2026 版）》：<a href="https://zfgb.hangzhou.gov.cn/15/103220263/t127220263034/530317.shtml" target="_blank" rel="noopener">zfgb.hangzhou.gov.cn</a></li>
               <li>湖北省人社厅《2026 年湖北省重点产业急需紧缺技能人才职业（工种）指导目录》（2026-02-05）：<a href="http://rst.hubei.gov.cn/bmdt/dtyw/stfb/202602/t20260205_5871212.shtml" target="_blank" rel="noopener">rst.hubei.gov.cn</a></li>
               <li>陕西省重点产业链人才需求目录（陕西省政府网，2026-01-05）：<a href="https://www.shaanxi.gov.cn/xw/ldx/bm/202601/t20260105_3602163.html" target="_blank" rel="noopener">shaanxi.gov.cn</a></li>
@@ -352,13 +374,13 @@
               <li>劳科院 2026 年 Q2 热门岗位薪酬数据（中国青年报，2026-09-06）：<a href="http://zqb.cyol.com/pc/content/202609/06/content_430320.html" target="_blank" rel="noopener">zqb.cyol.com</a></li>
               <li>上海市民政局 2025 年度养老护理员工资收入监测（2026-09-13）：<a href="https://mzj.sh.gov.cn/2026bsmz/20260913/5b2901920c26474a83b794908f46aea8.html" target="_blank" rel="noopener">mzj.sh.gov.cn</a></li>
               <li>谈职自动化工程师 / 直播运营薪酬页（2026-10-14 更新）：<a href="https://www.tanzhi.cn/job-titles/01f7584c-5a6d-4f5f-bcae-296de4741ba8/" target="_blank" rel="noopener">tanzhi.cn</a></li>
-              <li>招聘岗位原始页面：见上方 37 条招聘卡片各自链接（猎聘、智联、BOSS 直聘、前程无忧、腾讯 / 西门子官网等）。</li>
+              <li>招聘岗位原始页面：见上方 97 条招聘卡片各自链接（猎聘、智联、BOSS 直聘、前程无忧、腾讯 / 西门子官网等）。</li>
             </ul>
           </div>
         </div>
       </section>
 
-      <footer>数据整理于 2026-11-09，全部数字来自公开来源并在各屏注明年份与出处；招聘信息以原页面为准，岗位可能随时下线。城市平均招聘月薪为智联 2024 年三季度口径；2026 年三季度无 38 城榜单，未查到的城市与职业一律留空标注。</footer>
+      <footer>数据整理于 2026-11-09，仅收录近 3 年（2023 年 11 月以后）数据，超过 3 年的目录与排行已剔除；全部数字来自公开来源并在各屏注明年份与出处，官方紧缺目录均附原文跳转链接可核验。数据为多平台综合：城市薪资为智联 + 58 同城双口径，职业薪资综合脉脉 / 猎聘 / BOSS 直聘 / 智联 / 谈职 / 劳科院 / 官方监测，招聘岗位来自猎聘 / 前程无忧 / BOSS 直聘 / 智联 / 企业官网等平台并逐条标注。招聘信息以原页面为准，岗位可能随时下线；未查到的城市与职业一律留空标注。</footer>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
@@ -367,55 +389,55 @@
     var FIELD_COLORS = {'AI / 数字职业':'#38bdf8','芯片半导体':'#fbbf24','新能源汽车':'#4ade80','智能制造':'#fb923c','技能工种':'#a3e635','综合':'#7d93b8'};
 
     var CITIES = [
-      {name:'北京', coord:[116.41,39.90], salary:13119, field:'AI / 数字职业',
+      {name:'北京', coord:[116.41,39.90], salary:13119, salary58:9109, field:'AI / 数字职业', url:'https://rsj.beijing.gov.cn/xxgk/2024zcwj/202609/t20260911_4859344.html',
        top5:[['人工智能训练师','非常急需紧缺'],['生成式人工智能系统应用员','非常急需紧缺 · 年薪中位参考 26.5 万元'],['具身智能机器人应用技术员','非常急需紧缺 · 年薪中位参考 24.5 万元'],['工业视觉系统运维员','非常急需紧缺 · 年薪中位参考 22.9 万元'],['半导体芯片制造工','非常急需紧缺']],
        note:'目录中 26 个职业（工种）评级为「非常急需紧缺」；具身感知和交互技术研发、传感器研发等 19 个核心领域综合紧缺度最高。北京市 2026 年 Q1 最缺工 TOP20 见下方专节（北京口径）。',
        src:'北京市人社局《北京市新质生产力人力资源开发目录（2026 年版）》技能人才需求目录 · 2026-09-11'},
-      {name:'上海', coord:[121.47,31.23], salary:13544, field:'芯片半导体',
+      {name:'上海', coord:[121.47,31.23], salary:13544, salary58:9736, field:'芯片半导体', url:'https://rsj.sh.gov.cn/tjypx_17737/20260702/t0035_1442059.html',
        top5:[['人工智能训练师','高技能人才紧缺职业（工种）'],['半导体芯片制造工','高技能人才紧缺职业（工种）'],['工业机器人系统运维员','高技能人才紧缺职业（工种）'],['药物制剂工','高技能人才紧缺职业（工种）'],['养老护理员','高技能人才紧缺职业（工种）']],
-       note:'目录内职业（工种）可按规定享受本市人才引进等政策支持。本页收录的上海招聘最多：芯片、生物医药、养老护理三条线共 11 条。',
+       note:'目录内职业（工种）可按规定享受本市人才引进等政策支持。本页收录的上海招聘最多：原有芯片、生物医药、养老护理等 11 条，加上 BOSS 直聘实采芯片 15 条、AI 应用开发 15 条，共 41 条。',
        src:'上海市人社局《上海市急需紧缺高技能人才职业（工种）目录（2026 年）》· 2026-06-29 发布，2026-08-01 起实施'},
-      {name:'深圳', coord:[114.06,22.55], salary:12400, field:'AI / 数字职业',
+      {name:'深圳', coord:[114.06,22.55], salary:12400, salary58:8567, field:'AI / 数字职业', url:'https://www.sz.gov.cn/cn/xxgk/zfxxgj/tzgg/content/post_12366763.html',
        top5:[['信息安全测试员','三级 / 高级工以上'],['数字化解决方案设计师','三级 / 高级工以上'],['计算机软件测试员','三级 / 高级工以上'],['区块链应用操作员','三级 / 高级工以上'],['服务机器人应用技术员','三级 / 高级工以上']],
        note:'另有《深圳市重点产业高端紧缺岗位清单》涉及 1,343 个具体岗位，明细未在公开报道中逐条列出。',
        src:'深圳市人社局《深圳市技能人才引进紧缺职业目录（2025 年）》· 2026 年仍执行'},
-      {name:'广州', coord:[113.26,23.13], salary:10998, field:'技能工种',
-       top5:[['焊工','高级工 / 三级目录内工种'],['车工','高级工 / 三级目录内工种'],['电工相关工种','高级工 / 三级目录内工种'],['半导体芯片制造工','高级工 / 三级目录内工种'],['动车组机械师','「产业发展急需的行业紧缺工种」25 项之一']],
-       note:'2026 年版市级统一紧缺目录尚未发布：广州市人社局 2026-09-01 的申报指南仍沿用 2019 年目录，新版目录已开展需求调查。',
-       src:'广州市人社局现行《广州市引进技术技能人才职业目录（2019 年）》· 指南发布 2026-09-01'},
-      {name:'杭州', coord:[120.21,30.25], salary:11662, field:'AI / 数字职业',
+      {name:'广州', coord:[113.26,23.13], salary:10998, field:'综合',
+       top5:null,
+       note:'广州市 2026 年版市级统一紧缺目录尚未发布；此前沿用的 2019 年版目录已超过 3 年，按本页时效规则剔除，不展示其职业条目。新版已开展需求调查，发布后再补。',
+       src:'广州市人社局《紧缺工种人才引进入户申报指南》· 2026-09-01（仅证明暂无近 3 年目录）', url:'https://rsj.gz.gov.cn/ywzt/ztbd/bwyc/yjrcrh/content/post_10986688.html'},
+      {name:'杭州', coord:[120.21,30.25], salary:11662, salary58:8459, field:'AI / 数字职业', url:'https://zfgb.hangzhou.gov.cn/15/103220263/t127220263034/530317.shtml',
        top5:[['人工智能训练师','2026 版新纳入'],['工业机器人系统操作员','2026 版新纳入'],['工业机器人系统运维员','2022 版保留'],['无人机驾驶员','2026 版新纳入'],['半导体芯片制造工','2022 版保留']],
        note:'纳入目录的工种可享受培训补贴标准上浮 30%。本页收录的杭州招聘 12 条，AI 类（大模型 / RAG / Agent）占 8 条。',
        src:'杭州市人社局《杭州市技能类紧缺职业（工种）目录（2026 版）》· 2026-05-01 起施行'},
-      {name:'南京', coord:[118.80,32.06], salary:10962, field:'综合',
+      {name:'南京', coord:[118.80,32.06], salary:10962, field:'综合', url:'https://rsj.nanjing.gov.cn/njsrlzyhshbzj/202607/t20260720_5880209.html',
        top5:[['无人机驾驶员','A 档'],['汽车维修工','A 档'],['电子商务师','B 档 · 数字职业（S）'],['养老护理员','B 档'],['健康照护师','B 档']],
        note:'目录按 A / B / C 档分级，纳入目录的职业（工种）补贴标准在同档基础上提高 30%。',
        src:'南京市人社局《南京市 2026 年高技能人才培训补贴紧缺型职业（工种）目录》· 2026-07-20'},
-      {name:'苏州', coord:[120.58,31.30], salary:10773, field:'AI / 数字职业',
+      {name:'苏州', coord:[120.58,31.30], salary:10773, field:'AI / 数字职业', url:'https://hrss.suzhou.gov.cn/jsszhrss/gsgg/202608/ec1e4ac320ac4fe9bcec634919062c4e/files/2db7e9be57ca40a9afbe636cbe08a716.docx',
        top5:[['人工智能训练师','数字职业（S）'],['数字化解决方案设计师','数字职业（S）'],['服务机器人应用技术员','数字职业（S）'],['生成式人工智能系统应用员','数字职业（S）'],['智能网联汽车测试员','数字职业（S）']],
        note:'另：苏州工业园区 2026 年度重点产业紧缺专业人才需求目录共 402 个岗位，平均年薪 34.8 万元，研发技术类占 74.9%。',
        src:'苏州市人社局《苏州市高技能人才培训补贴紧缺型职业（工种）目录（2026 版）》· 2026-08'},
       {name:'宁波', coord:[121.55,29.87], salary:10890, field:'综合', top5:null,
-       note:'2024 年三季度宁波平均招聘月薪环比 +1.3%，为当季唯一环比正增长城市。本次调研的官方紧缺目录覆盖十城，宁波目录未收录。',
+       note:'2024 年三季度宁波平均招聘月薪环比 +1.3%，为当季唯一环比正增长城市。本次调研的官方紧缺目录未覆盖宁波，未收录。',
        src:'城市薪资：智联《中国企业招聘薪酬报告》2024 年三季度'},
       {name:'厦门', coord:[118.09,24.48], salary:10403, field:'综合', top5:null,
-       note:'本次调研的官方紧缺目录覆盖十城，厦门目录未收录。',
+       note:'本次调研的官方紧缺目录未覆盖厦门，未收录。',
        src:'城市薪资：智联《中国企业招聘薪酬报告》2024 年三季度'},
-      {name:'武汉', coord:[114.30,30.59], salary:10144, field:'新能源汽车',
+      {name:'武汉', coord:[114.30,30.59], salary:10144, field:'新能源汽车', url:'http://rst.hubei.gov.cn/bmdt/dtyw/stfb/202602/t20260205_5871212.shtml',
        top5:[['新能源汽车三电维修','湖北省 2026 年目录'],['人工智能训练师','湖北省 2026 年目录'],['无人机驾驶员','湖北省 2026 年目录'],['汽车维修工','湖北省 2026 年目录'],['养老护理员','湖北省 2026 年目录']],
        note:'武汉市级统一紧缺目录未查到，武汉执行湖北省 2026 年省级目录。',
        src:'湖北省人社厅《2026 年湖北省重点产业急需紧缺技能人才职业（工种）指导目录》· 2026-02-05'},
       {name:'东莞', coord:[113.75,23.02], salary:9944, field:'综合', top5:null,
-       note:'2024 年三季度东莞平均招聘月薪同比 +1.2%。本次调研的官方紧缺目录覆盖十城，东莞目录未收录。',
+       note:'2024 年三季度东莞平均招聘月薪同比 +1.2%。本次调研的官方紧缺目录未覆盖东莞，未收录。',
        src:'城市薪资：智联《中国企业招聘薪酬报告》2024 年三季度'},
-      {name:'西安', coord:[108.94,34.34], salary:9182, field:'AI / 数字职业',
+      {name:'西安', coord:[108.94,34.34], salary:9182, field:'AI / 数字职业', url:'https://www.shaanxi.gov.cn/xw/ldx/bm/202601/t20260105_3602163.html',
        top5:[['软件和信息技术服务产业链','省级目录 · 紧缺岗位数量占比前三'],['传感器与物联网产业链','省级目录 · 紧缺岗位数量占比前三'],['航空产业链','省级目录 · 紧缺岗位数量占比前三'],['半导体及集成电路产业链','省级目录 · 工业重点产业链'],['老年人能力评估师 / 健康照护师','省级目录 · 康养领域高度紧缺']],
        note:'西安无市级统一目录，上为陕西省目录口径。另：西安高新区 2026 年第三批高层次人才需求目录年薪区间 30–100 万元；西安市人才协会第四批目录含飞控算法工程师、存储器设计分析与验证、无损检测检验人员、气动工程师、磁悬浮工程师等岗位。本页收录的西安 AI 招聘 3 条，薪资 15–55k。',
        src:'陕西省重点产业链人才需求目录（陕西省政府网 · 2026-01-05）'},
       {name:'天津', coord:[117.20,39.08], salary:8999, field:'综合', top5:null,
-       note:'本次调研的官方紧缺目录覆盖十城，天津目录未收录。',
+       note:'本次调研的官方紧缺目录未覆盖天津，未收录。',
        src:'城市薪资：智联《中国企业招聘薪酬报告》2024 年三季度（网易号转载榜单）'},
-      {name:'成都', coord:[104.07,30.67], salary:null, field:'综合',
+      {name:'成都', coord:[104.07,30.67], salary:null, field:'综合', url:'https://cbgc.scol.com.cn/news/8083887',
        top5:[['遥感工程师（激光雷达方向）','2025 版示例 · 硕士及以上，3 年以上经验'],['AR/VR 软件开发工程师','2025 版示例 · 博士，5 年以上经验'],['卫星测运控高级工程师','2025 版示例 · 博士，8 年以上经验']],
        note:'《成都市人才开发指引（2026 版）》已发布：围绕 17 条重点产业链梳理 507 个急需紧缺岗位，明细未公开；上方 3 条为上一版（2025 版）指引的示例岗位，不冒充 2026 版。平均招聘月薪未查到。',
        src:'成都市人社局《成都市人才开发指引》· 2026 版发布报道 2026-10-22/23；示例来源 2025 版指引 PDF'},
@@ -435,7 +457,7 @@
        note:'因宁德时代 BMS 电池管理系统工程师一岗收录本地图。宁德不在智联 38 城平均薪资口径内，平均招聘月薪未查到。', src:'—'}
     ];
 
-    /* ---- 37 real postings, collected 2026-11-09. lt: 'd' = detail page, 's' = search/index page ---- */
+    /* ---- 97 real postings (37 original + 60 BOSS batch 2026-11-09), collected 2026-11-09. lt: 'd' = detail page, 's' = search/index page ---- */
     var POSTINGS = [
       {cat:'AI 应用开发', co:'中移集成（中国移动全资子公司）', city:'西安·高新区', title:'AI开发工程师', sal:'25-55k·15薪', k:'月薪约 25–55k', req:'3年以上 / 统招本科', lt:'d', url:'https://www.liepin.com/job/1986330207.shtml', note:'2026-11-09 复核，页面仍在招（发布于 2026-10-26）'},
       {cat:'AI 应用开发', co:'商汤科技 SenseTime', city:'西安·长安区', title:'AI 应用开发工程师（西安）', sal:'20-40k·15薪', k:'月薪约 20–40k', req:'经验不限 / 本科', lt:'d', url:'https://www.liepin.com/job/1979120403.shtml'},
@@ -484,15 +506,77 @@
 
       {cat:'营销员 / 销售代表', co:'郑州必扬信息技术有限公司', city:'郑州', title:'销售代表（可小白+包住+可晋升）', sal:'6K-8K', k:'月薪约 6–8k', req:'本科 / 校招，招6人', lt:'d', url:'https://jiuye.zueb.edu.cn/module/position_details/id-454036/nid-1690'},
       {cat:'营销员 / 销售代表', co:'上海赛徕克生物科技有限公司', city:'青岛·崂山区', title:'大客户销售（生物医药试剂）', sal:'无责底薪7000元/月 + 提成', k:'月薪 7k 起（+提成：月销售额超4万部分的5%）', req:'经验不限 / 大专', lt:'d', url:'https://www.zhaopin.com/jobdetail/CCL1509805440J40911600213.htm', note:'2026-11-09 当日打开核实'},
-      {cat:'营销员 / 销售代表', co:'广东天耘科技有限公司', city:'深圳', title:'销售代表', sal:'7000-14000', k:'月薪约 7–14k（无责底薪4-10k + 业绩提成8-30% + 绩效1-3k）', req:'学历不限 / 经验1年', lt:'d', url:'http://m.36hr.cn/job/W9Alv8HfrsY74S-HZSBL5w.html'}
+      {cat:'营销员 / 销售代表', co:'广东天耘科技有限公司', city:'深圳', title:'销售代表', sal:'7000-14000', k:'月薪约 7–14k（无责底薪4-10k + 业绩提成8-30% + 绩效1-3k）', req:'学历不限 / 经验1年', lt:'d', url:'http://m.36hr.cn/job/W9Alv8HfrsY74S-HZSBL5w.html'},
+
+      /* ---- BOSS直聘实采 60 条 · 2026-11-09 抓取 · 芯片上海 15 + AI应用开发 京/沪/深各 15 ---- */
+      {cat:'芯片设计 / 验证', co:'图灵量子', city:'上海·浦东新区', title:'超表面光芯片设计工程师(A157275)', sal:'20-40K·14薪', k:'月薪约 20–40k', req:'经验不限 / 硕士', lt:'d', url:'https://www.zhipin.com/job_detail/1d6ab7e25fdc41c10nF709m_EVZX.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'芯片设计 / 验证', co:'上海某中型智能硬件/消费电子公司', city:'上海', title:'数字芯片设计工程师（懂点算法FPGA）', sal:'30-35K', k:'月薪约 30–35k', req:'1-3年 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/c693899e635055ee0nx82tm6E1RS.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'芯片设计 / 验证', co:'鸿晔', city:'上海', title:'芯片设计工程师', sal:'40-70K·13薪', k:'月薪约 40–70k', req:'3-5年 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/8939516e831c76e40Hd62N66FlY~.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'芯片设计 / 验证', co:'快粼光电', city:'上海·浦东新区', title:'光电探测器芯片设计工程师', sal:'25-35K', k:'月薪约 25–35k', req:'经验不限 / 硕士', lt:'d', url:'https://www.zhipin.com/job_detail/aa7a2f28be3ad9f30nx72Nu8EFtT.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'芯片设计 / 验证', co:'展望未来', city:'上海', title:'芯片设计工程师', sal:'35-65K·15薪', k:'月薪约 35–65k', req:'1-3年 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/fa4d2578e5629bf10nN429i-FVFV.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'芯片设计 / 验证', co:'符瑞', city:'上海·徐汇区', title:'销售工程师（芯片、电子元器件）-上海', sal:'10-15K·14薪', k:'月薪约 10–15k', req:'5-10年 / 大专', lt:'d', url:'https://www.zhipin.com/job_detail/0063ee87cb55b4810nJ72t2-EFpR.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'芯片设计 / 验证', co:'上海某小型半导体/芯片公司', city:'上海', title:'芯片设计验证leader/工程师', sal:'45-75K·15薪', k:'月薪约 45–75k', req:'经验不限 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/ffca630d709c64df0nx50tS9GVJV.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'芯片设计 / 验证', co:'深圳某小型半导体/芯片公司', city:'上海', title:'芯片后端设计工程师', sal:'25-40K·15薪', k:'月薪约 25–40k', req:'经验不限 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/dffd63a1fec562cf0nx909--FlpX.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'芯片设计 / 验证', co:'北京软通动力云计...', city:'上海·浦东新区', title:'芯片硬件测试开发工程师', sal:'12-20K', k:'月薪约 12–20k', req:'3-5年 / 大专', lt:'d', url:'https://www.zhipin.com/job_detail/94230ca2cf92f2460nx72Nu4ElVW.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'芯片设计 / 验证', co:'润和软件', city:'上海·浦东新区', title:'芯片或模组装配工艺工程师', sal:'9-14K', k:'月薪约 9–14k', req:'1-3年 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/5a6d33a5e7d609cb0nx-39y5EFBU.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'芯片设计 / 验证', co:'纬致芯创科技', city:'上海·浦东新区', title:'AI赋能芯片设计验证工程师  头部外企', sal:'25-50K', k:'月薪约 25–50k', req:'1-3年 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/a5e5f0d20ed4e00a0nN82dm8EVFY.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'芯片设计 / 验证', co:'某大型通信设备公司', city:'上海', title:'模拟芯片设计工程师', sal:'40-70K·14薪', k:'月薪约 40–70k', req:'经验不限 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/f63488840b9fd4620nRy2dm0GFVX.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'芯片设计 / 验证', co:'某大型电子/半导体/集成电路公司', city:'上海', title:'芯片soc设计工程师（专家或管理岗）', sal:'30-55K', k:'月薪约 30–55k', req:'5-10年 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/038fea8dae38d8a90nNz0ti8EVNR.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'芯片设计 / 验证', co:'上海超维无际电子科技', city:'上海·浦东新区', title:'2027校招-芯片设计工程师', sal:'15-30K·15薪', k:'月薪约 15–30k', req:'在校/应届 / 学历不限', lt:'d', url:'https://www.zhipin.com/job_detail/343313d68047bfdc0nNz0tq8FFVY.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'芯片设计 / 验证', co:'泰凌微电子(上海...', city:'上海·浦东新区', title:'数字芯片设计工程师（DFT）', sal:'20-30K', k:'月薪约 20–30k', req:'在校/应届 / 硕士', lt:'d', url:'https://www.zhipin.com/job_detail/3e263728d7f639110nF_2tu9GFpU.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'北京某大型移动互联网上市公司', city:'北京', title:'AI应用开发', sal:'15-25K', k:'月薪约 15–25k', req:'3-5年 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/a445ec27c4ac26c40nN70tu6EFRY.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'香港方达科技(亚...', city:'北京·朝阳区', title:'AI全栈应用开发工程师', sal:'12-15K', k:'月薪约 12–15k', req:'1-3年 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/bdaa65e1f475aca90nx53dq7EFVZ.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'字节跳动', city:'北京', title:'AI Agent服务端研发工程师 - 开发者服务', sal:'20-30K·16薪', k:'月薪约 20–30k', req:'在校/应届 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/bd87100b6837cfbc0nx-0924GFdZ.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'北京某大型互联网短视频平台上市公司', city:'北京', title:'【27届互联网大厂】AI应用开发工程师', sal:'20-35K', k:'月薪约 20–35k', req:'在校/应届 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/b6a0f8af371bb2040nx52N20GVJS.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'钦浩数科', city:'北京·大兴区', title:'AI应用开发 / 企业数字化AI工程师', sal:'11-22K', k:'月薪约 11–22k', req:'3-5年 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/4a06472386efac120nx629u0F1JY.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'新致方舟科技', city:'北京·丰台区', title:'AI应用后端开发工程师（短期外包岗）', sal:'10-12K', k:'月薪约 10–12k', req:'3-5年 / 学历不限', lt:'d', url:'https://www.zhipin.com/job_detail/58ce0b2165d9b50c0nx-3Ni5EVRX.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'北京亿林灵码科技', city:'北京·昌平区', title:'AI应用开发实习生（内容方向）', sal:'200-300元/天', k:null, req:'经验未标注 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/f487ff2f1c899c4c0nx509-6GVZV.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'某小型其他专业服务公司', city:'北京', title:'AI应用开发', sal:'35-55K·15薪', k:'月薪约 35–55k', req:'经验不限 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/9a40e73f39c0a1cc0nJ_2N66GFVT.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'正惠科技', city:'北京·丰台区', title:'AI 应用工程师', sal:'9-13K', k:'月薪约 9–13k', req:'3-5年 / 大专', lt:'d', url:'https://www.zhipin.com/job_detail/541abbc710b020100nx_39W-F1tV.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'沧蓝科技', city:'北京·海淀区', title:'AI 应用产品经理（AI 原生方向）', sal:'13-20K', k:'月薪约 13–20k', req:'3-5年 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/6c64402e7adf231e0nx839y9GFVR.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'期音信息科技', city:'北京·海淀区', title:'AI应用开发工程师（全栈方向）', sal:'15-25K', k:'月薪约 15–25k', req:'经验不限 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/19e4f408265528eb0nx_2tu4F1RU.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'容百', city:'北京', title:'AI 应用开发工程师J11997', sal:'面议', k:null, req:'在校/应届 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/78679799adae3d3b0nN72964GFpU.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'北京星尘浩宇智能科技', city:'北京·东城区', title:'企业级 AI 应用开发实习生（全栈方向 ）', sal:'200-250元/天', k:null, req:'经验未标注 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/71eda32433ed5f5e0nx829q7EVtQ.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'竹智科技', city:'北京·海淀区', title:'AI应用开发工程师（AI-Native方向）', sal:'25-50K', k:'月薪约 25–50k', req:'经验不限 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/c6b933efd3ba66b70nB50t2_GVBT.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'苏州一分壹', city:'北京·通州区', title:'AI 多端应用开发工程师', sal:'8-10K·13薪', k:'月薪约 8–10k', req:'1-3年 / 学历不限', lt:'d', url:'https://www.zhipin.com/job_detail/633aea669608453e0nx93Nq-F1tS.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'某大型全球ICT及智能终端公司', city:'上海', title:'AI大模型应用开发（线上面试）', sal:'14-28K·14薪', k:'月薪约 14–28k', req:'经验不限 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/b335b39fbc6eaaf10nx83d60GVZW.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'上海蒙葵科技有限公司', city:'上海·闵行区', title:'ai应用开发工程师', sal:'5000-15000元/月', k:'月薪约 5–15k', req:'经验不限 / 大专', lt:'d', url:'https://www.zhipin.com/job_detail/0e3d970be90a58480nx82t--ElNT.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'香港方达科技(亚...', city:'上海·黄浦区', title:'AI全栈应用开发工程师（杭州上海）', sal:'10-13K', k:'月薪约 10–13k', req:'1-3年 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/fe555860f5824e3a0nx93Nm5FltS.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'外企德科数字', city:'上海·浦东新区', title:'ai应用开发/agent开发/算法岗（接受应届）', sal:'15-30K·14薪', k:'月薪约 15–30k', req:'经验不限 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/08432047591f6cc30nJy2dW8EVZX.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'上海沙拉网络科技...', city:'上海·闵行区', title:'AI应用开发实习生', sal:'200-300元/天', k:null, req:'经验未标注 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/a5b9f586d4bc0d090nN_3tm4ElJZ.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'千沐科技', city:'上海·闵行区', title:'AI Agent 应用开发实习生', sal:'200-350元/天', k:null, req:'经验未标注 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/c565109188fa8a4e0nx539S0EVFT.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'连尚网络', city:'上海·浦东新区', title:'AI应用开发实习生（全栈方向）', sal:'400-500元/天', k:null, req:'经验未标注 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/6d683d4fbdaef34d0nx809S6FVZQ.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'华为技术有限公司', city:'上海·青浦区', title:'AI 应用开发工程师', sal:'20-40K', k:'月薪约 20–40k', req:'在校/应届 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/ff9c8e6fd0783d730nN92dq7ElZQ.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'某知名汽车研发公司', city:'上海', title:'AI应用开发', sal:'35-55K·15薪', k:'月薪约 35–55k', req:'5-10年 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/22d0f4147eb236ac0nx72Nq9EFNQ.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'百济神州', city:'上海·黄浦区', title:'AI Native 应用开发实习', sal:'200-250元/天', k:null, req:'经验未标注 / 学历不限', lt:'d', url:'https://www.zhipin.com/job_detail/28df535c923b33080nd93ty0GVpX.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'某小型证券/期货公司', city:'上海', title:'ai应用开发', sal:'35-65K·15薪', k:'月薪约 35–65k', req:'经验不限 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/d8318b2368279fea0nx409q-F1VT.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'上海福程人力资源', city:'上海·静安区', title:'AI 应用开发实习生（前端 / Agent 方向）', sal:'200-300元/天', k:null, req:'经验未标注 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/ec11333541f220850nN909y_F1pV.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'飞书深诺', city:'上海', title:'2027校招-AI应用开发工程师', sal:'20-25K·16薪', k:'月薪约 20–25k', req:'经验不限 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/e8550e9f8e260b300nx82dm_FVNS.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'凯数', city:'上海·静安区', title:'Java开发工程师（AI应用开发）', sal:'10-15K', k:'月薪约 10–15k', req:'3-5年 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/5580d473ccffba390nBz2Nu4FVtT.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'源兹生物', city:'上海·闵行区', title:'AI开发实习生（AI应用开发方向）', sal:'300-400元/天', k:null, req:'经验未标注 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/61890d41c8c0a9790nFz2ti8EVNW.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'字节跳动', city:'深圳', title:'AI应用开发实习生（AI剪辑） - 剪映CapCut', sal:'500-550元/天', k:null, req:'经验未标注 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/1d2302a6284fc9940nx50tS7GVZV.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'华为', city:'深圳·龙岗区', title:'AI应用开发（Java/python/C/C++）', sal:'15-30K', k:'月薪约 15–30k', req:'1年以内 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/68c47e339d884b8e0nN52Nq6GVVS.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'视美泰', city:'深圳·南山区', title:'AI大模型智能体与Linux应用开发实习生', sal:'200-250元/天', k:null, req:'经验未标注 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/02c9093594cd67070nx-3Nq6EVJQ.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'新旦智能', city:'深圳·南山区', title:'AI应用开发', sal:'150-250元/天', k:null, req:'经验未标注 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/9ace8a146ad63e1a03Z-3d--EVZR.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'泛亚实业', city:'深圳', title:'ai应用开发工程师', sal:'10-15K', k:'月薪约 10–15k', req:'经验不限 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/6fc748bc0431dd630nx90t20F1BX.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'智乐活', city:'深圳·南山区', title:'AI应用研发实习生（居家办公）', sal:'200-250元/天', k:null, req:'经验未标注 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/ec84deb2c14a1d2e0nx80tq_FlJS.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'深圳新辰知序科技', city:'深圳', title:'AI产品经理（大模型应用｜0-1）', sal:'20-30K', k:'月薪约 20–30k', req:'5-10年 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/44ba06fb1b30b6920nJ-2dm9E1JU.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'上海万宝盛华信息科技', city:'深圳·龙岗区', title:'AI大模型应用开发工程师', sal:'15-25K·14薪', k:'月薪约 15–25k', req:'1-3年 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/c211593abfab56140nBy3t67GFFZ.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'合生和', city:'深圳·南山区', title:'AI 应用开发工程师【双休+16年从不拖薪】', sal:'25-35K', k:'月薪约 25–35k', req:'3-5年 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/f11ba74de95e2e460nx73920EFNZ.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'前海恒道智融', city:'深圳·福田区', title:'AI应用开发', sal:'13-14K', k:'月薪约 13–14k', req:'1-3年 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/b4d31b66b2024bf90nN52Ni4GVVX.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'趣象时空', city:'深圳·南山区', title:'AI SaaS 增长产品经理（官网与开发者生态）', sal:'25-40K·15薪', k:'月薪约 25–40k', req:'5-10年 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/74951fa33a34c9510nx63d-4FVRU.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'弘沐', city:'深圳', title:'AI应用专员(开发流程提效方向)', sal:'10-15K·13薪', k:'月薪约 10–15k', req:'经验不限 / 大专', lt:'d', url:'https://www.zhipin.com/job_detail/75ea3ab03a1d754f0nx909-_E1ZW.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'沐刻智能', city:'深圳', title:'AI Agent 应用开发实习生（A237255）', sal:'300-400元/天', k:null, req:'经验未标注 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/7eb540208e2ab82b0nx73dW8ElpU.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'禾苗通信', city:'深圳·福田区', title:'AI应用开发（企业提效与AI变革）', sal:'20-40K·13薪', k:'月薪约 20–40k', req:'3-5年 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/7de773a6fc6b1b0c0nx-3tW-ElRU.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'},
+      {cat:'AI 应用开发', co:'深圳某大型智能硬件/消费电子上市公司', city:'深圳', title:'AI应用开发工程师/ AI全栈（上市企业）', sal:'60-90K', k:'月薪约 60–90k', req:'5-10年 / 本科', lt:'d', url:'https://www.zhipin.com/job_detail/c7c086334819596b0nJ52Nq7GFVW.html', note:'BOSS直聘实采 · 2026-11-09 抓取，详情页直达'}
     ];
 
     var CAT_META = [
-      {cat:'AI 应用开发', sum:'西安 · 月薪约 15–55k · 3 条均为猎聘详情页'},
+      {cat:'AI 应用开发', sum:'北京 / 上海 / 深圳 / 西安 · 月薪约 5–90k（另有日薪岗与面议岗）· 猎聘 3 条 + BOSS直聘实采 45 条'},
       {cat:'大模型应用开发', sum:'杭州 · 月薪约 35–70k'},
       {cat:'RAG 开发', sum:'杭州 · 月薪约 26–68k'},
       {cat:'AI Agent 开发', sum:'杭州 · 月薪约 28–70k'},
-      {cat:'芯片设计 / 验证', sum:'上海 · 月薪约 20–80k（2 条未公开薪资除外）'},
+      {cat:'芯片设计 / 验证', sum:'上海 · 月薪约 9–80k（2 条未公开薪资除外）· 原有 5 条 + BOSS直聘实采 15 条'},
       {cat:'嵌入式开发', sum:'深圳 / 西安 / 杭州 · 月薪约 15–40k'},
       {cat:'新能源汽车（电机/电控/电池）', sum:'青岛 / 宁德 / 多基地 · 月薪约 11.7–30k'},
       {cat:'智能制造 / 自动化', sum:'苏州 / 深圳 · 月薪约 11–26k（1 条未公开薪资除外）'},
@@ -563,7 +647,7 @@
     /* ---- ten-city directory cross-matrix ---- */
     var OCC_MATRIX = [
       {occ:'人工智能训练师', cities:['北京','上海','杭州','苏州','武汉（湖北省目录）']},
-      {occ:'半导体芯片制造工', cities:['北京','上海','杭州','广州（2019 版目录）']},
+      {occ:'半导体芯片制造工', cities:['北京','上海','杭州']},
       {occ:'养老护理员', cities:['上海','南京','武汉（湖北省目录）']},
       {occ:'无人机驾驶员', cities:['杭州','南京','武汉（湖北省目录）']},
       {occ:'工业机器人系统运维员', cities:['上海','杭州']},
@@ -578,10 +662,6 @@
       {occ:'信息安全测试员', cities:['深圳']},
       {occ:'计算机软件测试员', cities:['深圳']},
       {occ:'区块链应用操作员', cities:['深圳']},
-      {occ:'焊工', cities:['广州（2019 版目录）']},
-      {occ:'车工', cities:['广州（2019 版目录）']},
-      {occ:'电工相关工种', cities:['广州（2019 版目录）']},
-      {occ:'动车组机械师', cities:['广州（2019 版目录）']},
       {occ:'工业机器人系统操作员', cities:['杭州']},
       {occ:'新能源汽车三电维修', cities:['武汉（湖北省目录）']},
       {occ:'电子商务师', cities:['南京']},
@@ -590,6 +670,21 @@
     ];
 
     var BEIJING_TOP20 = ['家政服务员','保洁员','快递员','餐厅服务员','理货员','养老护理员','网约配送员','营销员','保育师','前厅服务员','保安员','房地产经纪人','呼叫中心服务员','安检员','医疗护理员','装卸搬运工','客户服务管理员','辅警','婴幼儿发展引导员','内科护士'];
+
+    /* ---- official directory source links (verbatim URLs from research notes) ---- */
+    var DIR_SRCS = [
+      {city:'北京', doc:'《北京市新质生产力人力资源开发目录（2026 年版）》技能人才需求目录 · 北京市人社局 · 2026-09-11', url:'https://rsj.beijing.gov.cn/xxgk/2024zcwj/202609/t20260911_4859344.html'},
+      {city:'北京', doc:'《2026 年第一季度市场招聘大于求职「最缺工」的 100 个职业排行》· 北京市人社局 · 2026-05-18 上网（docx）', url:'https://rsj.beijing.gov.cn/xxgk/sjfbsj/gqfx/202605/P020260518351638747375.docx'},
+      {city:'上海', doc:'《上海市急需紧缺高技能人才职业（工种）目录（2026 年）》· 上海市人社局 · 2026-06-29', url:'https://rsj.sh.gov.cn/tjypx_17737/20260702/t0035_1442059.html'},
+      {city:'深圳', doc:'《深圳市技能人才引进紧缺职业目录（2025 年）》· 深圳市政府网 · 2025-09-08，2026 年仍执行', url:'https://www.sz.gov.cn/cn/xxgk/zfxxgj/tzgg/content/post_12366763.html'},
+      {city:'杭州', doc:'《杭州市技能类紧缺职业（工种）目录（2026 版）》· 杭州市人社局 · 2026-05-01 起施行', url:'https://zfgb.hangzhou.gov.cn/15/103220263/t127220263034/530317.shtml'},
+      {city:'南京', doc:'《南京市 2026 年高技能人才培训补贴紧缺型职业（工种）目录》· 南京市人社局 · 2026-07-20', url:'https://rsj.nanjing.gov.cn/njsrlzyhshbzj/202607/t20260720_5880209.html'},
+      {city:'苏州', doc:'《苏州市高技能人才培训补贴紧缺型职业（工种）目录（2026 版）》· 苏州市人社局 · 2026-08（docx）', url:'https://hrss.suzhou.gov.cn/jsszhrss/gsgg/202608/ec1e4ac320ac4fe9bcec634919062c4e/files/2db7e9be57ca40a9afbe636cbe08a716.docx'},
+      {city:'武汉', doc:'《2026 年湖北省重点产业急需紧缺技能人才职业（工种）指导目录》· 湖北省人社厅 · 2026-02-05（武汉执行省级目录）', url:'http://rst.hubei.gov.cn/bmdt/dtyw/stfb/202602/t20260205_5871212.shtml'},
+      {city:'西安', doc:'《陕西省重点产业链人才需求目录》· 陕西省政府网 · 2026-01-05（西安无市级统一目录，采用省级口径）', url:'https://www.shaanxi.gov.cn/xw/ldx/bm/202601/t20260105_3602163.html'},
+      {city:'成都', doc:'《成都市人才开发指引（2026 版）》发布报道（507 个急需紧缺岗位，明细未公开）· 2026-10-22/23', url:'https://cbgc.scol.com.cn/news/8083887'},
+      {city:'广州', doc:'《紧缺工种人才引进入户申报指南》· 广州市人社局 · 2026-09-01 —— 仅证明广州暂无近 3 年目录；其沿用的 2019 年版目录已超 3 年，本页未采用', url:'https://rsj.gz.gov.cn/ywzt/ztbd/bwyc/yjrcrh/content/post_10986688.html', old:true}
+    ];
 
     /* ==================== HELPERS ==================== */
     function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
@@ -607,6 +702,29 @@
       return false;
     }
     function cityJobs(name){ return POSTINGS.filter(function(p){ return matchCity(p, name); }); }
+    function platOf(p){
+      var u = p.url || '';
+      if(u.indexOf('liepin.com') >= 0) return '猎聘';
+      if(u.indexOf('zhipin.com') >= 0) return 'BOSS直聘';
+      if(u.indexOf('51job.com') >= 0) return '前程无忧';
+      if(u.indexOf('zhaopin.com') >= 0) return '智联招聘';
+      if(u.indexOf('careers.tencent.com') >= 0) return '腾讯招聘官网';
+      if(u.indexOf('jobs.siemens.com') >= 0) return '西门子官网';
+      if(u.indexOf('mzj.sh.gov.cn') >= 0) return '上海市民政局';
+      if(u.indexOf('haitou.cc') >= 0) return '海投网';
+      if(u.indexOf('xdf.cn') >= 0) return '新东方春招盘点';
+      if(u.indexOf('gdufs.edu.cn') >= 0 || u.indexOf('zcse.edu.cn') >= 0 || u.indexOf('zueb.edu.cn') >= 0) return '院校就业网';
+      if(u.indexOf('36hr.cn') >= 0) return '36人力';
+      return '其他来源';
+    }
+    function renderPlatStrip(){
+      var counts = {};
+      POSTINGS.forEach(function(p){ var k = platOf(p); counts[k] = (counts[k] || 0) + 1; });
+      var keys = Object.keys(counts).sort(function(a,b){ return counts[b] - counts[a]; });
+      var h = '<span class="ps">来源平台共 <b>' + keys.length + '</b> 个</span>';
+      keys.forEach(function(k){ h += '<span class="ps">' + esc(k) + ' <b>' + counts[k] + ' 条</b></span>'; });
+      document.getElementById('platStrip').innerHTML = h;
+    }
     function cityByName(name){ for(var i=0;i<CITIES.length;i++){ if(CITIES[i].name === name) return CITIES[i]; } return null; }
 
     /* ==================== CITY PANEL ==================== */
@@ -615,7 +733,7 @@
 
     function miniJobHTML(p){
       var sal = p.sal ? '<span class="ms">' + esc(p.sal) + '</span>' : '<span class="ms" style="color:var(--mut)">薪资未公开</span>';
-      return '<div class="mini-job"><span class="mc">' + esc(p.co) + '</span><br>' +
+      return '<div class="mini-job"><span class="mc">' + esc(p.co) + '</span> <span class="plat">' + esc(platOf(p)) + '</span><br>' +
         '<span class="mt">' + esc(p.title) + '</span> · ' + sal + ' · ' +
         '<a href="' + esc(p.url) + '" target="_blank" rel="noopener">查看岗位 ↗</a></div>';
     }
@@ -649,6 +767,9 @@
         '<span class="field-chip"><span class="dot" style="background:' + (FIELD_COLORS[c.field] || '#7d93b8') + '"></span>' + esc(c.field) + '</span></div>';
       if(c.salary !== null){
         h += '<div class="cp-salary"><span class="v">' + fmt(c.salary) + '</span><span class="u">元/月 · 平均招聘月薪<br>智联 2024 年三季度</span><span class="cp-tier">' + salaryTier(c.salary) + '</span></div>';
+        if(c.salary58){
+          h += '<div class="dual-sal">第二口径 · 58 同城 2026 年三季度：<b>' + fmt(c.salary58) + ' 元/月</b>（样本与统计方法不同，不与智联口径直接比较）</div>';
+        }
       } else {
         h += '<div class="cp-salary"><span class="v none">平均招聘月薪：未查到</span></div>';
       }
@@ -659,17 +780,19 @@
         });
         h += '</ol></div>';
       } else {
-        h += '<div class="cp-sec"><h3>官方紧缺职业</h3><div class="cp-empty">本次调研的十城官方紧缺目录未覆盖该城，未收录。</div></div>';
+        h += '<div class="cp-sec"><h3>官方紧缺职业</h3><div class="cp-empty">该城暂无近 3 年官方紧缺目录条目可展示（详见下方说明）。</div></div>';
       }
       if(c.note && c.note !== '—') h += '<div class="cp-note">' + esc(c.note) + '</div>';
       h += '<div class="cp-sec"><h3>本页收录的在招岗位（' + jobs.length + ' 条' + (jobs.length ? '，含跨城岗位' : '') + '）</h3>';
       if(jobs.length){
         jobs.forEach(function(p){ h += miniJobHTML(p); });
       } else {
-        h += '<div class="cp-empty">本页 37 条招聘中暂无该城岗位。</div>';
+        h += '<div class="cp-empty">本页 ' + POSTINGS.length + ' 条招聘中暂无该城岗位。</div>';
       }
       h += '</div>';
-      if(c.src && c.src !== '—') h += '<div class="cp-src">目录来源：' + esc(c.src) + '</div>';
+      if(c.src && c.src !== '—'){
+        h += '<div class="cp-src">目录来源：' + esc(c.src) + (c.url ? '<br><a class="src-link" href="' + esc(c.url) + '" target="_blank" rel="noopener" style="margin-top:6px">查看官方原文 ↗</a>' : '') + '</div>';
+      }
       panel.innerHTML = h;
       if(window.__mapChart) updateMapSelection();
       if(scroll && window.innerWidth <= 1080){
@@ -753,7 +876,7 @@
             if(p.data && p.data.city){
               var c = p.data.city;
               var s = '<b style="font-size:15px">' + esc(c.name) + '</b> · ' + esc(c.field) + '<br>';
-              s += c.salary !== null ? '平均招聘月薪 <b>' + fmt(c.salary) + ' 元</b>（智联 2024 Q3）<br>' : '平均招聘月薪：未查到<br>';
+              s += c.salary !== null ? '平均招聘月薪 <b>' + fmt(c.salary) + ' 元</b>（智联 2024 Q3）' + (c.salary58 ? ' · 58 同城 2026 Q3 <b>' + fmt(c.salary58) + ' 元</b>' : '') + '<br>' : '平均招聘月薪：未查到<br>';
               s += '本页收录招聘 ' + cityJobs(c.name).length + ' 条<br><span style="color:' + t.mut + '">点击查看紧缺职业 TOP5 与岗位</span>';
               return s;
             }
@@ -902,6 +1025,11 @@
         h += '</div>';
       });
       document.getElementById('mxBody').innerHTML = h;
+      var ds = '<h3>各城目录原文 · 点击跳转核验</h3>';
+      DIR_SRCS.forEach(function(d){
+        ds += '<div class="ds-row"><span class="ds-city">' + esc(d.city) + '</span><span class="ds-doc">' + (d.old ? '<span class="old">【已剔除·仅存证】</span>' : '') + esc(d.doc) + '</span><a class="src-link" href="' + esc(d.url) + '" target="_blank" rel="noopener">查看原文 ↗</a></div>';
+      });
+      document.getElementById('dirSrcs').innerHTML = ds;
       var t = '';
       BEIJING_TOP20.forEach(function(n, i){ t += '<li><span class="rk">' + (i+1) + '</span>' + esc(n) + '</li>'; });
       document.getElementById('top20').innerHTML = t;
@@ -922,7 +1050,7 @@
         salHTML +
         '<div class="meta">' + esc(p.req) + '</div>' +
         (p.note ? '<div class="note">' + esc(p.note) + '</div>' : '') +
-        '<div class="foot">' + tagHTML + '<a class="go" href="' + esc(p.url) + '" target="_blank" rel="noopener">查看岗位 ↗</a></div>' +
+        '<div class="foot"><span>' + tagHTML + ' <span class="plat">' + esc(platOf(p)) + '</span></span><a class="go" href="' + esc(p.url) + '" target="_blank" rel="noopener">查看岗位 ↗</a></div>' +
         '</article>';
     }
     function renderJobs(){
@@ -961,6 +1089,7 @@
     renderMapLegend();
     renderPanelDefault();
     renderMatrix();
+    renderPlatStrip();
     renderFilters();
     renderJobs();
     loadMap();
